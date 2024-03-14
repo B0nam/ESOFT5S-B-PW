@@ -20,44 +20,37 @@
         padding: 0;
       }
 
+      /* Estilos gerais */
+
+      body {
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+
       main {
-        max-width: 80vw;
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       main > section {
         padding: 20px;
       }
 
-      p {
-        margin-bottom: 16px;
-      }
+      main section,
+      main article {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
 
-      ul li {
-        margin-left: 20px;
-      }
-
-      body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f4f4f4;
-      }
-
-      a[target="_blank"] {
-        color: #4592c4;
-        font-weight: bold;
-      }
-
-      header {
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
+        color: black;
+        background-color: #fff;
         padding: 20px;
-      }
-
-      header h1 {
-        font-size: 24px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
       }
 
       section h1,
@@ -72,13 +65,53 @@
         margin-bottom: 10px;
       }
 
-      nav ul {
-        list-style: none;
+      p {
+        margin-bottom: 16px;
+      }
+
+      ul li {
+        list-style-position: inside;
+      }
+
+      #small-image {
+        align-self: center;
+        max-width: fit-content;
+        
+        height: auto;
+        width: 120px;
+        height: 120px;
+      }
+
+      /* Header */
+
+      header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      /* Lista de navegação */
+      
+
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        list-style: none;
+        gap: 20px;
         justify-content: center;
         background-color: #343a40;
         padding: 10px;
-        border-radius: 0px px 5px 5px;
+        margin-bottom: 20px;
       }
 
       nav a {
@@ -91,37 +124,32 @@
         color: #ffc107;
       }
 
-      th {
-        padding: 10px 24px;
+      /* Seções */
+
+      #curiosidades li::marker {
+        content: '🔍';
       }
 
-      tr {
-        text-align: center;
+      #evolucao img {
+        max-width: fit-content;
+        height: auto;
+        width: 120px;
+        height: 120px;
       }
 
-      main section,
-      main article,
-      main table {
-        color: black;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-
-      #recursos a:hover {
-        opacity: 0.8;
-      }
-
-      #curiosidades li{
-        list-style-type: "🔍 ";
-      }
-
-      #evolucoes table {
+      #evolucao ul {
         display: flex;
+        flex-wrap: wrap;
+
         justify-content: space-around;
-        font-weight: bolder;
+        list-style: none;
+      }
+
+      #evolucao figcaption {
+        font-weight: 600;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 16px;
       }
 
       article {
@@ -129,40 +157,51 @@
         color: #fff;
       }
 
+      /* Links */
+
+      a[target='_blank'] {
+        color: #4592c4;
+        font-weight: bold;
+      }
+
+      a[target='_blank']:hover {
+        opacity: 0.8;
+      }
+
+      /* Footer */
+
       footer {
         background-color: #343a40;
         color: #fff;
         padding: 20px;
         text-align: center;
         bottom: 0;
-        width: 100%;
       }
 
       footer a {
-        color: #ffc107;
         text-decoration: none;
+        transition: color 0.3s ease-in-out;
       }
 
-      footer a[href="#info-squirtle"] {
+      footer a[href*='#'] {
         color: white;
       }
 
-      footer a[href="mailto:contato@squirtlepage.com"] {
+      footer a[href*='mailto'] {
         color: orangered;
       }
 
-      footer a[href="tel:+5555555555"] {
+      footer a[href*='tel'] {
         color: limegreen;
       }
 
-      footer a:hover {
+      footer a[href]:hover {
         opacity: 0.8;
       }
-
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>Squirtle</h1>
     </header>
 
@@ -173,14 +212,14 @@
         <li><a href="#curiosidades">Curiosidades</a></li>
         <li><a href="#artigo-squirtle">Artigo sobre Squirtle</a></li>
         <li><a href="#recursos">Recursos Adicionais</a></li>
-        <li><a href="#evolucoes">Evoluções</a></li>
+        <li><a href="#evolucao">Evolução</a></li>
       </ul>
     </nav>
 
     <main>
       <section id="info-squirtle" aria-labelledby="info-squirtle-label">
         <h2 id="info-squirtle-label">Informações sobre Squirtle</h2>
-        <img
+        <img id="small-image"
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
           alt="Squirtle - Pokémon do tipo Água"
         />
@@ -258,32 +297,39 @@
         </ul>
       </section>
 
-      <section id="evolucoes" aria-labelledby="evolucoes-label">
-        <h2 id="evolucoes-label">Evoluções</h2>
-        <table>
-              <tr>
-                <td>
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/">
-                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png" alt=""></td>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/">
-                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png" alt=""></td>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://bulbapedia.bulbagarden.net/wiki/">
-                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png" alt=""></td>
-                    </a>
-                </td>
-            </tr>
-              <tr>
-                <td>1. Squirtle</td>
-                <td>2. Wartortle</td>
-                <td>3. Blastoise</td>
-              </tr>
-        </table>
+      <section id="evolucao" aria-labelledby="evolucao-label">
+        <h2 id="evolucao-label">Evoluções</h2>
+        <ul>
+          <li>
+            <figure>
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+                alt="Squirtle"
+              />
+              <figcaption>1. Squirtle</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure>
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
+                alt="Wartortle"
+              />
+              <figcaption>2. Wartortle</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure>
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
+                alt="Blastoise"
+              />
+              <figcaption>3. Blastoise</figcaption>
+            </figure>
+          </li>
+        </ul>
       </section>
     </main>
 
@@ -291,7 +337,7 @@
       <p aria-label="Copyright">
         &copy; 2024 Página do Pokémon Squirtle. Todos os direitos reservados.
       </p>
-      <p><a href="#info-squirtle">Voltar para o topo</a></p>
+      <p><a href="#header">Voltar para o topo</a></p>
       <p><a href="mailto:contato@squirtlepage.com">Contato via e-mail</a></p>
       <p><a href="tel:+5555555555">Telefone: (55) 5555-5555</a></p>
     </footer>
