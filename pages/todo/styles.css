@@ -1,0 +1,81 @@
+/* Reset de estilos para garantir consistência em diferentes navegadores */
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li,
+figure,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos gerais */
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+#forms-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#input-text {
+    color: #5d5d5d;
+    font-size: large;
+    padding: 10px;
+}
+
+#input-button {
+    font-weight: bold;
+    background-color: #0074d9;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+#todo-itens {
+    font-size: larger;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
