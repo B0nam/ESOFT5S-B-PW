@@ -1,0 +1,94 @@
+/* Reset de estilos para garantir consistência em diferentes navegadores */
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li,
+figure,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 10fr 1fr;
+}
+
+header,
+footer {
+    background-color: #4682b4;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    max-height: 100ch;
+}
+
+#actions-conteiner {
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    height: 100%;
+    width: 100%;
+    align-items: center;    
+    align-content: center;
+    justify-content: center;
+}
+
+#form-conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#search {
+    width: 50%;
+    position: relative;
+}
+
+#search input {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+
+#search button {
+    position: absolute;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#filter {
+    cursor: pointer;
+}
+
+#filter-modal::backdrop {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
